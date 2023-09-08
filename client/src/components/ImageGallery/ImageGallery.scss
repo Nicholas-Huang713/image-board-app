@@ -1,0 +1,14 @@
+/* src/components/ImageGallery.css */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    opacity: 0.5; /* Adjust the opacity as needed */
+
+  }
+  
+  .gallery-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
