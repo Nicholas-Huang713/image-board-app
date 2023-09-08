@@ -1,7 +1,7 @@
 // server/server.js
 const express = require('express');
 const mongoose = require('mongoose');
-// const cors = require('cors')
+const cors = require('cors')
 const users = require('./routes/user');
 const path = require('path');
 
@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
   
 
-  // app.use(cors());
+  app.use(cors());
   app.use(express.json());
   
   mongoose.connect('mongodb://127.0.0.1:27017/img-board', {

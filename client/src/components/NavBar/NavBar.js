@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import CameraLogo from '../../images/cameralogo.svg';
+import { Link } from 'react-router-dom';
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -102,12 +103,24 @@ export default function NavBar() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
+          <Link
+            to="/dashboard"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Dashboard
+          </Link>
+          <Link
+            to="/userform"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            UserForm
+          </Link>
+          <Link
+            to="/"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Landing 
+          </Link>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Company
           </a>
@@ -167,18 +180,24 @@ export default function NavBar() {
                     </>
                   )}
                 </Disclosure>
-                <a
-                  href="#"
+                <Link
+                  to="/dashboard"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Features
-                </a>
-                <a
-                  href="#"
+                  Dashboard
+                </Link>
+                <Link
+                  to="/userform"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Marketplace
-                </a>
+                  UserForm
+                </Link>
+                <Link
+                  to="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Landing
+                </Link>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"

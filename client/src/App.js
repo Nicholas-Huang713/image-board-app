@@ -4,9 +4,12 @@ import LogoutButton from './components/LogoutButton/LogoutButton';
 import { gapi } from 'gapi-script'
 import NavBar from './components/NavBar/NavBar';
 import LandingPage from './components/LandingPage/LandingPage';
+import DashBoard from './components/DashBoard/DashBoard';
 import ImageGallery from './components/ImageGallery/ImageGallery';
 import CreateUserForm from './components/CreateUserForm/CreateUserForm';
 import './App.scss';
+import { Route, Routes } from 'react-router-dom';
+
 
 const clientId = "798778873798-seceoqhfukvss64t2o7u5iufrb9ckn0m.apps.googleusercontent.com";
 
@@ -40,7 +43,12 @@ function App() {
     {/* <LandingPage /> */}
       {/* <LoginButton />
       <LogoutButton /> */}
-      <CreateUserForm />
+      {/* <CreateUserForm /> */}
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/userform" element={<CreateUserForm />} />
+      </Routes>
     </div>
   );
 }
