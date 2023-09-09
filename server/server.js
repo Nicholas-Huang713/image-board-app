@@ -8,15 +8,17 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
   
+const corsOptions = {
+  origin: 'http://54.153.95.6',
+};
+app.use(cors(corsOptions));
+app.use(express.json());
 
-  app.use(cors());
-  app.use(express.json());
-  
-  mongoose.connect('mongodb://127.0.0.1:27017/img-board', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }).then((() => console.log("Connected to DB")))
-    .catch(console.error);
+mongoose.connect('mongodb://127.0.0.1:27017/img-board', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then((() => console.log("Connected to DB")))
+  .catch(console.error);
 
 app.use('/users', users)
 
