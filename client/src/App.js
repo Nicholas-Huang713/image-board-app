@@ -9,6 +9,7 @@ import ImageGallery from './components/ImageGallery/ImageGallery';
 import CreateUserForm from './components/CreateUserForm/CreateUserForm';
 import './App.scss';
 import { Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 
 
 const clientId = "798778873798-seceoqhfukvss64t2o7u5iufrb9ckn0m.apps.googleusercontent.com";
@@ -17,7 +18,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`) // Update with your API endpoint
+    axios.get(`http://localhost:5000/users`) // Update with your API endpoint
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
