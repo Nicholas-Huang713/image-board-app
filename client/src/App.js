@@ -18,11 +18,11 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/users`) // Update with your API endpoint
-      .then((response) => response.json())
+    axios.get(`/users`) // Update with your API endpoint
+      // .then((response) => response.json())
       .then((data) => {
         setItems(data);
-        console.log(data)
+        console.log(data.data)
       })
       .catch((error) => console.error('Error fetching data:', error));
 
