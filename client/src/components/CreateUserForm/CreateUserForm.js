@@ -28,7 +28,7 @@ function CreateUserForm() {
         username
     };
     try {
-        await axios.post('http://localhost:5000/users/new', data);
+        await axios.post('/users/new', data);
         
     } catch(error) {
         console.log("error", error)
