@@ -18,7 +18,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get(`/users`) // Update with your API endpoint
+    axios.get(`/api/users`) // Update with your API endpoint
       // .then((response) => response.json())
       .then((data) => {
         setItems(data);
