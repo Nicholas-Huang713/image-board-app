@@ -20,11 +20,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/img-board', {
 app.use('/api', api)
 // app.use('/users', users)
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// });
 
 //to redirect for server port
 const _dirname = path.dirname("");
