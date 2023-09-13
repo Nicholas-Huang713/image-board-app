@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const api = require('./routes/api');
 const path = require('path');
+const dotenv = require('dotenv');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,6 +18,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/img-board', {
 }).then((() => console.log("Connected to DB")))
   .catch(console.error);
 
+dotenv.config();
 app.use('/api', api)
 // app.use('/users', users)
 
