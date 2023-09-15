@@ -23,19 +23,19 @@ dotenv.config();
 app.use('/api', api)
 // app.use('/users', users)
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// });
 
 //to redirect for server port
 const _dirname = path.dirname("");
 const buildPath = path.join(_dirname, "../client/build")
 
-if(process.env.NODE_ENV === 'production'){
+// if(process.env.NODE_ENV === 'production'){
   app.use(express.static(buildPath))
-}
+// }
 
 app.get("*", function(req, res){
   res.sendFile(
